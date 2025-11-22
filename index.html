@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Social Media</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div id="auth-form-container">
+            <div class="logo">TalChat</div>
+            <div id="login-form" class="auth-form">
+                <h2>Login</h2>
+                <form id="login">
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                    <p>Don't have an account? <a href="#" id="show-signup">Sign up</a></p>
+                </form>
+            </div>
+            <div id="signup-form" class="auth-form hidden">
+                <h2>Sign Up</h2>
+                <form id="signup">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">Sign Up</button>
+                    <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

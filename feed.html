@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">TalChat</div>
+            <div class="search-container">
+                <input type="text" id="search-bar" placeholder="Search posts...">
+            </div>
+            <div class="user-info">
+                <span id="user-name"></span>
+                <button id="messages-toggle"><i class="fas fa-paper-plane"></i></button>
+                <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+                <button id="logout-btn">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <div id="messages-panel" class="messages-panel hidden">
+        <div class="messages-header">
+            <h3>Messages</h3>
+        </div>
+        <div class="messages-body">
+            <p class="coming-soon">Messaging coming soon!</p>
+            <ul class="conversation-list">
+                <li class="conversation">
+                    <img src="https://i.pravatar.cc/40?u=a042581f4e29026704d" alt="User avatar">
+                    <div class="conversation-details">
+                        <span class="conversation-user">Jane Doe</span>
+                        <span class="conversation-preview">Hey, how are you?</span>
+                    </div>
+                </li>
+                <li class="conversation">
+                    <img src="https://i.pravatar.cc/40?u=a042581f4e29026704e" alt="User avatar">
+                    <div class="conversation-details">
+                        <span class="conversation-user">John Smith</span>
+                        <span class="conversation-preview">Let's catch up later.</span>
+                    </div>
+                </li>
+                 <li class="conversation">
+                    <img src="https://i.pravatar.cc/40?u=a042581f4e29026704f" alt="User avatar">
+                    <div class="conversation-details">
+                        <span class="conversation-user">Alex Ray</span>
+                        <span class="conversation-preview">Just saw your post, nice!</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <main class="main-container">
+        <aside class="sidebar">
+            <div class="create-post-container">
+                <h2>Create Post</h2>
+                <form id="create-post-form">
+                    <textarea id="post-text" placeholder="What's on your mind?" required></textarea>
+                    <div class="custom-file-input">
+                        <input type="file" id="post-image-file" class="hidden-file-input" accept="image/*">
+                        <label for="post-image-file" class="file-input-label">Choose Image</label>
+                        <span class="file-name-display" id="create-post-file-name"></span>
+                    </div>
+                    <button type="submit">Post</button>
+                </form>
+            </div>
+            <div class="filter-sort-container">
+                <h2>Sort & Filter</h2>
+                <button id="sort-latest">Latest First</button>
+                <button id="sort-oldest">Oldest First</button>
+                <button id="sort-most-liked">Most Liked</button>
+            </div>
+        </aside>
+
+        <section id="feed">
+            <!-- Posts will be injected here by JavaScript -->
+        </section>
+    </main>
+
+    <div id="edit-post-modal" class="modal-container hidden">
+        <div class="modal-content">
+            <h2>Edit Post</h2>
+            <textarea id="edit-post-text"></textarea>
+            <div class="custom-file-input">
+                <input type="file" id="edit-post-image-file" class="hidden-file-input" accept="image/*">
+                <label for="edit-post-image-file" class="file-input-label">Choose Image</label>
+                <span class="file-name-display" id="edit-post-file-name"></span>
+            </div>
+            <div class="modal-actions">
+                <button id="save-edit-btn">Save</button>
+                <button id="cancel-edit-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="app.js"></script>
+</body>
+</html>
